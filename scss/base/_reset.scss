@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+nav {
+    background: #222;
+    padding: 0 1rem;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.menu,
+.submenu {
+    list-style-type: none;
+}
+
+.logo {
+    font-size: 1.3rem;
+    padding: .5rem 1rem 1rem 0;
+}
+
+.item {
+    padding: .7rem;
+    a {
+        &:hover {
+            &::after {
+                color: rebeccapurple;
+            }
+        }
+    }
+    &.button {
+        padding: .5rem 5px;
+        color: red;
+    }
+    &:not(.button) {
+        a {
+            &:hover {
+                color: yellow;
+            }
+        }
+    }
+}

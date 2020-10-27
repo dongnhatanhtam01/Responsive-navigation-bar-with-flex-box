@@ -1,0 +1,194 @@
+.has-submenu>a::after {
+    font-family: "Font Awesome 5 Free";
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 900;
+    content: "\f071";
+    color: red;
+    padding-left: 5px;
+}
+
+// mobile menu 
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    li {
+        a {
+            display: block;
+            padding: 1rem .3rem;
+        }
+        &.subitem {
+            a {
+                color: red;
+                background: black;
+                padding: 15px;
+            }
+        }
+    }
+}
+
+.item {
+    &.button {
+        order: 2
+    }
+    order: 3;
+    text-align: center;
+    display: none;
+    width: 100%;
+}
+
+.toggle {
+    order: 1;
+    font-size: 20px;
+}
+
+.active {
+    .item {
+        display: block;
+    }
+}
+
+.button {
+    &.secondary {
+        border-bottom: 1px #444 solid;
+    }
+}
+
+
+/* Submenu up from mobile screens */
+
+.submenu {
+    // hide subitem 
+    display: none;
+}
+
+.submenu-active {
+    // background-color: rgb(212, 47, 47);
+    border-radius: 3px;
+    .submenu {
+        display: block;
+    }
+}
+
+.has-submenu i {
+    font-size: 12px;
+}
+
+.subitem {
+    a {
+        padding: 100px 15px;
+    }
+}
+
+// -- end of submenu --
+// -- end of mobile --
+// Table menu 
+@media all and (min-width: 700px) {
+    .menu {
+        justify-content: center;
+    }
+    .logo {
+        flex: 1;
+    }
+    .item {
+        &.button {
+            width: auto;
+            order: 1;
+            display: block;
+        }
+    }
+    .toggle {
+        flex: 1;
+        text-align: right;
+        order: 2;
+    }
+    /* Button up from tablet screen */
+    .menu {
+        li {
+            &.button {
+                a {
+                    padding: 10px 15px;
+                    margin: 5px 0;
+                }
+            }
+        }
+    }
+    .button {
+        a {
+            background: #0080ff;
+            border: 1px royalblue solid;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+        &.secondary {
+            border: 0;
+            a {
+                background: transparent;
+                border: 1px #0080ff solid;
+            }
+        }
+    }
+    .button {
+        &:not(.secondary) {
+            a {
+                &:hover {
+                    background: royalblue;
+                    border-color: darkblue;
+                }
+            }
+        }
+    }
+}
+
+// end of table menu
+
+/* Desktop menu */
+
+@media all and (min-width: 960px) {
+    .has-submenu {
+        &>a {
+            &::after {
+                font-family: "Font Awesome 5 Free";
+                font-size: 12px;
+                line-height: 16px;
+                font-weight: 900;
+                content: "\f078";
+                color: white;
+                padding-left: 5px;
+            }
+        }
+    }
+    .menu {
+        align-items: flex-start;
+        flex-wrap: nowrap;
+        background: none;
+    }
+    .logo {
+        order: 0;
+    }
+    .item {
+        order: 1;
+        position: relative;
+        display: block;
+        width: auto;
+    }
+    .button {
+        order: 2;
+    }
+    .submenu-active .submenu {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 68px;
+        background: #111;
+    }
+    .toggle {
+        display: none;
+    }
+    .submenu-active {
+        border-radius: 0;
+    }
+}
